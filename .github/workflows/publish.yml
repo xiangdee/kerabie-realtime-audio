@@ -1,0 +1,35 @@
+name: Publish to npm
+
+# Publishes when you push a version tag that matches package.json, e.g. `git tag v1.0.2 && git push --tags`.
+# Uses npm Trusted Publishing (OIDC): no token is stored anywhere. Link this repo and workflow file to the
+# package once under npmjs.com > the package > Settings > Trusted Publisher > GitHub Actions.
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org
+
+      # Trusted Publishing needs npm 11.5.1 or newer.
+      - run: npm install -g npm@latest
+
+      - run: npm ci
+
+      - run: npm run typecheck
+
+      - name: Tag must match package.json
+        run: test "v$(node -p "require('./package.json').version")" = "${GITHUB_REF_NAME}"
+
+      - run: npm publish --access public --provenance

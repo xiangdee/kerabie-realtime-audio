@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.homepage       = package['homepage']
   s.platforms      = { :ios => '15.1' }
   s.swift_version  = '5.4'
-  s.source         = { git: 'https://github.com/xiangdee/kerabie-realtime-audio.git', tag: package['version'] }
+  s.source         = { git: 'https://github.com/xiangdee/kerabie-realtime-audio.git', tag: 'v' + package['version'] }
   s.static_framework = true
 
   s.dependency 'ExpoModulesCore'
