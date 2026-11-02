@@ -125,7 +125,7 @@ public class KerabieRealtimeAudioModule: Module {
             self.audioEngine?.clearPlayback()
         }
 
- that can be emitted
+        // Define the events that can be emitted
         Events([
             ON_MIC_DATA_EVENT_NAME,
             ON_INPUT_VOLUME_LEVEL_EVENT_NAME,
