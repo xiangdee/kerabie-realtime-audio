@@ -1,17 +1,33 @@
 {
   "name": "@kerabie/realtime-audio",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Live two-way audio for Expo and React Native: microphone capture with echo cancelling and PCM playback, for voice AI",
   "main": "build/index.js",
   "types": "build/index.d.ts",
-  "files": ["build", "src", "ios", "android", "expo-module.config.json", "LICENSE", "README.md"],
+  "files": [
+    "build",
+    "src",
+    "ios",
+    "android",
+    "expo-module.config.json",
+    "LICENSE",
+    "README.md"
+  ],
   "scripts": {
     "build": "tsc",
     "typecheck": "tsc --noEmit",
     "prepublishOnly": "npm run build"
   },
-  "keywords": ["react-native", "expo", "audio", "voice", "realtime", "pcm", "echo-cancellation"],
-  "repository": "https://github.com/xiangdee/kerabie-realtime-audio",
+  "keywords": [
+    "react-native",
+    "expo",
+    "audio",
+    "voice",
+    "realtime",
+    "pcm",
+    "echo-cancellation"
+  ],
+  "repository": "https://github.com/xiangdee/kerabie-realtime-audio.git",
   "license": "MIT",
   "author": "Kerabie",
   "devDependencies": {
@@ -24,5 +40,9 @@
     "expo": ">=54.0.0",
     "react": "*",
     "react-native": "*"
+  },
+  "homepage": "https://github.com/xiangdee/kerabie-realtime-audio#readme",
+  "bugs": {
+    "url": "https://github.com/xiangdee/kerabie-realtime-audio/issues"
   }
 }
